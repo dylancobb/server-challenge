@@ -17,4 +17,20 @@ server.get("/colour", (req, res) => {
     `);
 });
 
+server.get("/cheese", (req, res) => {
+    res.send(`
+        <form method="POST">
+            <div>
+                <label for="name">Cheese name</label>
+                <input name="name">
+            </div>
+            <div>
+                <label for="rating">Cheese rating</label>
+                <input name="rating" type="range" min="0" max="5" step="0.5">
+            </div>
+            <button>Rate cheese</button>
+        </form>
+    `);
+});
+
 module.exports = server;
