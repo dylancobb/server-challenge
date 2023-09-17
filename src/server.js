@@ -10,6 +10,10 @@ server.get("/colour", (req, res) => {
     const hex = req.query.hex || "ffffff";
     res.send(`
     <style>body { background-color: #${hex}; }</style>
+    <form>
+        <label for="hex">Enter hex code:</label>
+        <input type="text" name="hex" value="${hex}">
+    </form>
     `);
 });
 
